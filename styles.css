@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'segoe ui', tahoma, geneva, verdana, sans-serif;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #7637dc;
+    --secondary-color: #3aaeed;
+    --escuro-color: #0a0f1c;
+    --light-color: #e2e8f0;
+    --vidro-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--escuro-color);
+    color: var(--light-color);
+}
+
+.navegação {
+     position: fixed;
+    top: 0;
+    background: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem; 
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--light-color);
+    font-weight: 500;
+    position: relative;
+    padding: 0.4rem 0;
+}
+
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.cabeçalho {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foto-perfil {
+    margin-top: 250px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 5cap rgba(79, 70, 229, 0.3);
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 50px 0;
+}
+
+.cabeçalho-sub-titulo {
+    font-size: 1.5rem;
+    color: var(--light-color);
+    margin-top: 10px;
+}
+
+.sobre-mim {
+    padding: 15rem 6rem;
+}
+
+.sobre-titulo {
+ font-size: 3rem;
+    color: var(--light-color);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sobre-caixa {
+padding: 2rem;
+max-width: 800px;
+margin: 0 auto;
+border-radius: 16px;
+border: 1px solid var(--vidro-color);
+backdrop-filter: blur(10px);
+background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sobre-paragrafo {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.hobbies {
+padding: 6rem 2rem;
+}
+
+.hobbies-caixa {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 4rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.hobbies-card {
+  background-color: rgba(51, 17, 109, 0.3);
+border-radius: 16px;
+backdrop-filter: blur(10px);
+border: 1px solid var(--vidro-color);
+overflow: hidden;
+transition:all 0.5s ease;
+cursor: pointer;
+}
+
+.hobbies-titulos {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.hobbies-card:hover {
+    box-shadow:0 10px 20px rgba(79, 70, 229, 0.3);
+transform: translateY(-10px) scale(1.03);
+}
+.hobbies-imagem {
+height: 400px;
+width: 100%;
+object-fit: cover;
+}
+
+.caixa-texto {
+    padding: 10px;
+
+}
+.paragrafo-hobbie {
+color: var(--light-color);
+line-height: 25px;
+}
+
+.info-hobbies {
+margin-bottom: 10px;
+}
+
+.contatos {
+    padding: 10rem 5rem;
+}
+
+.contato-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.contato-titulos {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 50px;
+}
+.formulario-contato {
+max-width: 600px;
+margin: 0 auto;
+background-color: white;
+backdrop-filter: blur(10px);
+padding: 2rem;
+border: 1px;
+border-radius: 16px;
+
+}
+
+
+
+.campo-form {
+width: 100%;
+padding: 1rem;
+background-color: rgba(72, 70, 70, 0.5);
+text: white;
+border-radius: 8px;
+color: var(--escuro-color-color);
+border: 1.5px solid var(--primary-color);
+outline: none;
+}
+
+.campo-form:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+.grupo-form {
+margin-bottom: 1.5rem;
+}
+
+.botao-form {
+    color: var(--light-color);
+    background-color: var(--primary-color, secondary-color);
+padding: 1rem 2rem;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-weight: bold;
+width: 100%;
+transition: all 0.5s ease;
+}
+
+.botao-form:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: radial-gradient(circle at 10% 20%, var(--primary-color) 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--secondary-color) 0%, transparent 20%) var(--escuro-color);
+}
+.saquarema {
+    padding: 80px;
+}
+
+.saquarema-caixa {
+max-width: 1200;
+margin: 0 auto;
+}
+
+.saquarema-card {
+display:flex;
+align-items: center;
+gap: 5px;
+background-color: rgba(99, 21, 195, 0.2);
+border-radius: 16px;
+backdrop-filter: blur(20px);
+border: 2px solid var(--vidro-color);
+overflow: hidden;
+transition:all 0.5s ease;
+cursor: pointer;
+}
+
+.saquarema-titulos {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+.saquarema-card:hover {
+    box-shadow:0 10px 20px rgba(79, 70, 229, 0.3);
+transform: translateY(-10px) scale(1);
+}
+
+.saquarema-fotos {
+    margin: 2rem;
+    align-items: center;
+    display: flex;
+    gap:  10px;
+}
+.saquarema-img {
+    flex: 1.2;
+width: 30%;
+width: auto;
+height: 400px;
+object-fit: cover;
+}
+.saquarema-texto {
+    flex: 0,8;
+    padding: 15px;
+}
+
+.saquarema-paragrafo{
+color: var(--light-color);
+margin: 20px;
+text-align:center;
+line-height: 25px;
+max-width: 7000px;
+}
+.profissão {
+    padding: 10rem 6rem;
+}
+
+.profissão-titulo {
+ font-size: 3rem;
+    color: var(--light-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.profissão-caixa {
+padding: 2rem;
+max-width: 600px;
+margin: 0 auto;
+border-radius: 16px;
+border: 1px solid var(--vidro-color);
+backdrop-filter: blur(10px);
+background-color: rgba(255, 255, 255, 0.05);
+}
+.profissão-paragrafo {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.barra{
+    width: 100%;
+    height: 20px;
+    background-color: var(--vidro-color);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progresso{
+    height: 100%;
+    background-color: var(--primary-color, --secondary-color);
+    border-radius: 20px;
+}
+
+.progresso-Photoshop{
+    width: 70%;
+}
+
+.progresso-Illustrator{
+    width: 72%;
+}
+
+.progresso-figma{
+    width: 80%;
+}
+
+.progresso-after-efects{
+    width: 65%;
+}
+
+.skill {
+width: 600px;
+    margin: 20px auto;
+}
